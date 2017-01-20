@@ -1,0 +1,98 @@
+%inline-block {
+	display: inline-block;
+	vertical-align: middle;
+}
+.mobile-break {
+	@include respond-to(xs) {
+		display: block;
+	}
+}
+.desktop-break {
+	@include respond-to(md-and-up) {
+		display: block;
+	}
+}
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: left;
+}
+.text-center {
+	text-align: center;
+}
+%btn {
+	&-simple {
+		transition: all .3s;
+		display: inline-block;
+		position: relative;
+		padding-bottom: 10px;
+		@include theme-gray-lighten('color');
+		@include lsp(150);
+		&:after {
+			transition: all .3s;
+			content: '';
+			height: 4px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			@include theme('background-color');
+
+		}
+		&:hover {
+
+			@include theme-gray-lighten('color');
+			&:after {
+				@include theme-lighten('background-color');
+			}
+		}
+	}
+}
+%first-letter {
+	font-size: 250%;
+	font-family: $font-family-heading;
+	@include theme('color');
+	@include lsp(100);
+}
+@media (max-width: $screen-xs-max) {
+  @include responsive-invisibility('.hidden-xs');
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include responsive-invisibility('.hidden-sm');
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include responsive-invisibility('.hidden-md');
+}
+
+@media (min-width: $screen-lg-min) {
+  @include responsive-invisibility('.hidden-lg');
+}
+// Animation helpers
+@keyframes slideIn {
+	from {bottom: -300px; opacity: 0}
+	to {bottom: 0; opacity: 1}
+}
+@keyframes slideOut {
+	from {bottom: 0; opacity: 1; }
+	to {bottom: -300px; opacity: 0; visibility: hidden;}
+}
+@keyframes slideInTop {
+	from {top: -50px; opacity: 0}
+	to {top: 0; opacity: 1}
+}
+@keyframes fadeIn {
+	from {opacity: 0}
+	to {opacity: 1}
+}
+@keyframes fadeOut {
+	from {opacity: 1}
+	to {opacity: 0}
+}
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

@@ -1,0 +1,36 @@
+.content {
+	padding-bottom: 1em;
+	@include respond-to(md-and-up) {
+		display: flex;
+		width: 100%;
+		padding-bottom: 2em;
+		&__block {
+			width: 75%;
+			padding-right: 4em;
+
+		}
+		&__block--secondary {
+			width: 25%;
+			padding-right: 0;
+		}
+	}
+}
+/* Wordpress Alignments */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

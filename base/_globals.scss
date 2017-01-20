@@ -1,0 +1,24 @@
+body {
+	@extend .rare-body;
+	color: $brand-black;
+}
+a {
+	@include theme(color);
+	text-decoration: none;
+}
+html {
+	font-size: 100%;
+}
+img {
+	height: auto;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+//admin override
+#wpstats {
+	display: none;
+}
+html #wpadminbar { top:0 !important; }
